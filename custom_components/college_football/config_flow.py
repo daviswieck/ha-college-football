@@ -54,6 +54,7 @@ async def _get_team_list(self):
         'TTU',
         'Oklahoma State Cowboys',
         'OKST',
+        'CMU',
         'WVU'
     ]
     
