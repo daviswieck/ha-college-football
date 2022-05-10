@@ -1,0 +1,12 @@
+{
+    "domain": "college-football",
+    "name": "College Football",
+    "version": "0.1",
+    "documentation": "https://github.com/daviswieck/ha-college-football",
+    "issue_tracker": "https://github.com/daviswieck/ha-college-football/issues",
+    "dependencies": [],
+    "codeowners": ["@daviswieck"],
+    "config_flow": true,
+    "requirements": ["arrow"],
+    "iot_class": "cloud_polling"
+  }
