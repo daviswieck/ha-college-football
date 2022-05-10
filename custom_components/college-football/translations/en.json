@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "name": "Friendly Name",
+          "team_id": "Team Acronym",
+          "timeout": "Update Timeout (in seconds)"
+        },
+        "description": "You can find your X-letter acronym on the ESPN College Football page's banner, at the top score strip.",
+        "title": "College Football"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "name": "Friendly Name",
+          "team_id": "Team Acronym",
+          "timeout": "Update Timeout (in seconds)"
+        },
+        "description": "You can find your X-letter acronym on the ESPN College Football page's banner, at the top score strip.",
+        "title": "College Football"
+      }
+    }
+  }
+}
