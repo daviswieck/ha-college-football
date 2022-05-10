@@ -1,5 +1,5 @@
 {
-    "domain": "college-football",
+    "domain": "college_football",
     "name": "College Football",
     "version": "0.1",
     "documentation": "https://github.com/daviswieck/ha-college-football",
