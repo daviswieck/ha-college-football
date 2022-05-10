@@ -225,9 +225,9 @@ async def async_get_state(config) -> dict:
                     values["team_record"] = None
                 values["team_homeaway"] = event["competitions"][0]["competitors"][team_index]["homeAway"]
                 values["team_logo"] = event["competitions"][0]["competitors"][team_index]["team"]["logo"]
-                try:
-                    values["team_colors"] = [''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["color"])), 
-                                         ''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["alternateColor"]))]
+#                try:
+#                    values["team_colors"] = [''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["color"])), 
+#                                         ''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["alternateColor"]))]
 #                except:
 #                    if team_id == 'NFC':
 #                        values["team_colors"] = ['#013369','#013369']
@@ -237,23 +237,23 @@ async def async_get_state(config) -> dict:
 #                values["opponent_abbr"] = event["competitions"][0]["competitors"][oppo_index]["team"]["abbreviation"]
 #                values["opponent_id"] = event["competitions"][0]["competitors"][oppo_index]["team"]["id"]
 #                values["opponent_name"] = event["competitions"][0]["competitors"][oppo_index]["team"]["shortDisplayName"]
-                try:
-                    values["opponent_record"] = event["competitions"][0]["competitors"][oppo_index]["records"][0]["summary"]
-                except:
-                    values["opponent_record"] = None
-                values["opponent_homeaway"] = event["competitions"][0]["competitors"][oppo_index]["homeAway"]
-                values["opponent_logo"] = event["competitions"][0]["competitors"][oppo_index]["team"]["logo"]
-                try:
-                    values["opponent_colors"] = [''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["color"])), 
-                                         ''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["alternateColor"]))]
+#                try:
+#                    values["opponent_record"] = event["competitions"][0]["competitors"][oppo_index]["records"][0]["summary"]
+#                except:
+#                    values["opponent_record"] = None
+#                values["opponent_homeaway"] = event["competitions"][0]["competitors"][oppo_index]["homeAway"]
+#                values["opponent_logo"] = event["competitions"][0]["competitors"][oppo_index]["team"]["logo"]
+#                try:
+#                    values["opponent_colors"] = [''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["color"])), 
+#                                         ''.join(('#',event["competitions"][0]["competitors"][team_index]["team"]["alternateColor"]))]
  #               except:
  #                   if team_id == 'AFC':
  #                       values["opponent_colors"] = ['#013369','#013369']
  #                   if team_id == 'NFC':
  #                       values["opponent_colors"] = ['#D50A0A','#D50A0A']
-                values["opponent_score"] = event["competitions"][0]["competitors"][oppo_index]["score"]
-                values["last_update"] = arrow.now().format(arrow.FORMAT_W3C)
-                values["private_fast_refresh"] = False
+ #               values["opponent_score"] = event["competitions"][0]["competitors"][oppo_index]["score"]
+ #               values["last_update"] = arrow.now().format(arrow.FORMAT_W3C)
+ #               values["private_fast_refresh"] = False
         
         # Never found the team. Either a bye or a post-season condition
         if not found_team:
