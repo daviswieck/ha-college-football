@@ -56,7 +56,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     hass.data[DOMAIN][config.entry_id] = {
         COORDINATOR: coordinator,
     }
-    async_add_entities([NFLScoresSensor(hass, config)], True)
+    async_add_entities([CollegeFootballScoresSensor(hass, config)], True)
 
 
 async def async_setup_entry(hass, entry, async_add_entities):
