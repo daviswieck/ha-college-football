@@ -82,8 +82,10 @@ async def _get_team_list(self):
         'MICH',
         'MSU',
         'MINN',
-        'NEB',
-        'NU',
+        'neb',
+        'nu',
+        'nebraska'
+        'northwestern'
         'OSU',
         'PSU',
         'PUR',
