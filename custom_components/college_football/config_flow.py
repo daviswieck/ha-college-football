@@ -50,7 +50,7 @@ async def _get_team_list(self):
     """Return list of team acronyms"""
 
     team_list = [
-        'TTU',
+        'ttu',
         'TEX',
         'WVU',
         'TCU',
