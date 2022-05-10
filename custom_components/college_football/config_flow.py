@@ -50,7 +50,6 @@ async def _get_team_list(self):
     """Return list of team acronyms"""
 
     team_list = [
-        ## Big 12 ##
         'TTU',
         'TEX',
         'WVU',
@@ -61,7 +60,6 @@ async def _get_team_list(self):
         'OU',
         'BAY',
         'KU',
-        ## ACC ##
         'BC',
         'CLEM',
         'DUKE',
@@ -77,7 +75,6 @@ async def _get_team_list(self):
         'VT',
         'WAKE',
         'ND',
-        ## Big Ten ##
         'ILL',
         'IU',
         'IOWA',
@@ -92,7 +89,6 @@ async def _get_team_list(self):
         'PUR',
         'RUTG',
         'WISC',
-        ## PAC 12 ##
         'ARIZ',
         'ASU',
         'CAL',
@@ -105,7 +101,6 @@ async def _get_team_list(self):
         'UTAH',
         'WASH',
         'WSU',
-        ## SEC ##
         'ALA',
         'ARK',
         'AUB',
