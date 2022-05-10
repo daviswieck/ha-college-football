@@ -103,7 +103,7 @@ async def _get_team_list(self):
         'USC',
         'STAN',
         'UTAH',
-        'WASH,
+        'WASH',
         'WSU',
         ## SEC ##
         'ALA',
