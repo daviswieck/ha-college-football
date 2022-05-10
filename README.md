@@ -1,8 +1,12 @@
+# STILL TESTING NOT WORKING!!!
+
 # College Football game data in Home Assistant
 
 This integration fetches data for an NFL team's current/future game, and creates a sensor with attributes for the details of the game. 
 
 The integration is a shameless fork of the excellent [NWS alerts](https://github.com/finity69x2/nws_alerts) custom component by @finity69x2.Thank you for the starting place!
+
+The integration is a shameless fork of the excellent [ha-nfl](https://github.com/zacs/ha-nfl) custom component by @zacs.Thank you for the starting place!
 
 ## Sensor Data
 
