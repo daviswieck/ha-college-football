@@ -18,3 +18,5 @@ async def test_sensor(hass):
     await hass.async_block_till_done()
 
     assert "college_football" in hass.config.components
+
+    
