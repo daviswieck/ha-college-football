@@ -8,14 +8,14 @@ CONF_TEAM_ID = "team_id"
 
 # Defaults
 DEFAULT_ICON = "mdi:football"
-DEFAULT_NAME = "College-Football"
+DEFAULT_NAME = "College_Football"
 DEFAULT_TIMEOUT = 120
 
 # Misc
 TEAM_ID = ""
 VERSION = "0.1"
 ISSUE_URL = "https://github.com/daviswieck/ha-college-football"
-DOMAIN = "college-football"
+DOMAIN = "college_football"
 PLATFORM = "sensor"
 ATTRIBUTION = "Data provided by ESPN"
 COORDINATOR = "coordinator"
