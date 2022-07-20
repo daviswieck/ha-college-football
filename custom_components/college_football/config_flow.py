@@ -112,7 +112,32 @@ async def _get_team_list(self):
         'miz',
         'sc',
         'ta&m',
-        'van'
+        'van',
+        'tem',
+        'usf',
+        'tuln',
+        'navy',
+        'mem',
+        'smu',
+        'ucf',
+        'cin',
+        'tlsa',
+        'ecu',
+        'hou',
+        'wku',
+        'mrsh',
+        'odu',
+        'mtsu',
+        'fau',
+        'clt',
+        'fiu',
+        'utsa',
+        'uab',
+        'unt',
+        'utep',
+        'rice',
+        'usm',
+        'lt'     
         
     ]
     
