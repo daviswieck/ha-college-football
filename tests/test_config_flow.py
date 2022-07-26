@@ -15,14 +15,14 @@ from custom_components.college_football.const import CONF_TEAM_ID, DOMAIN
         (
             {
                 "name": "Testing State",
-                "team_id": "NEB",
+                "team_id": "neb",
                 "timeout": 120,
             },
             "user",
             "Testing State",
             {
                 "name": "Testing State",
-                "team_id": "NEB",
+                "team_id": "neb",
                 "timeout": 120,
             },
         ),
@@ -67,7 +67,7 @@ async def test_form(
 #         {
 #             DOMAIN: {
 #                 CONF_NAME: "College_Football",
-#                 CONF_TEAM_ID: "NEB",
+#                 CONF_TEAM_ID: "neb",
 #             },
 #         },
 #     ],
