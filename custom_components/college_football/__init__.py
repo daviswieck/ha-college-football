@@ -1,7 +1,6 @@
 """ College Football Team Status """
 import logging
-from datetime import timedelta, datetime
-date = datetime(2022, 8, 26)
+from datetime import timedelta
 import arrow
 
 import aiohttp
