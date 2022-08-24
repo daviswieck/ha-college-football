@@ -50,6 +50,7 @@ async def _get_team_list(self):
     """Return list of team acronyms"""
 
     team_list = [
+        #### FBS SCHOOLS ####
         ## Big 12 ##
         'ttu',
         'tex',
@@ -77,6 +78,7 @@ async def _get_team_list(self):
         'vt',
         'wake',
         'nd',
+        ## Big 10 ##
         'ill',
         'iu',
         'iowa',
@@ -91,6 +93,7 @@ async def _get_team_list(self):
         'pur',
         'rutg',
         'wisc',
+        ## PAC 12 ##
         'ariz',
         'asu',
         'cal',
@@ -103,6 +106,7 @@ async def _get_team_list(self):
         'utah',
         'wash',
         'wsu',
+        ## SEC ##
         'ala',
         'ark',
         'aub',
@@ -115,6 +119,7 @@ async def _get_team_list(self):
         'sc',
         'ta&m',
         'van',
+        ## American ##
         'tem',
         'usf',
         'tuln',
@@ -126,6 +131,7 @@ async def _get_team_list(self):
         'tlsa',
         'ecu',
         'hou',
+        ## Conference USA ##
         'wku',
         'mrsh',
         'odu',
@@ -140,12 +146,14 @@ async def _get_team_list(self):
         'rice',
         'usm',
         'lt',
+        ## Independent ##
         'byu', 
         'army',
         'lib',
         'nmsu',
         'mass',
         'conn',
+        ## Mid-American ##
         'kent',
         'm-oh',
         'ohio',
@@ -158,6 +166,7 @@ async def _get_team_list(self):
         'ball',
         'emu',
         'wmu',
+        ## Mountain West ##
         'usu',
         'afa',
         'bsu',
@@ -170,6 +179,7 @@ async def _get_team_list(self):
         'sjsu',
         'haw',
         'unlv',
+        ## Sun Belt ##
         'app',
         'gast',
         'ccu',
@@ -180,6 +190,9 @@ async def _get_team_list(self):
         'ulm',
         'usa',
         'arst',
+        #### FCS SCHOOLS ####
+        'mur',
+        'vmi',
         'shsu'
         
     ]
