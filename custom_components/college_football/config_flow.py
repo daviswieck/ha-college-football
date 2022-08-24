@@ -50,6 +50,7 @@ async def _get_team_list(self):
     """Return list of team acronyms"""
 
     team_list = [
+        ## Big 12 ##
         'ttu',
         'tex',
         'wvu',
@@ -60,6 +61,7 @@ async def _get_team_list(self):
         'ou',
         'bay',
         'ku',
+        ## ACC ##
         'bc',
         'clem',
         'duke',
@@ -177,7 +179,8 @@ async def _get_team_list(self):
         'txst',
         'ulm',
         'usa',
-        'arst'
+        'arst',
+        'shsu'
         
     ]
     
