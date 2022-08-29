@@ -2,7 +2,7 @@
 
 # College Football game data in Home Assistant
 
-This integration fetches data for an NFL team's current/future game, and creates a sensor with attributes for the details of the game. 
+This integration fetches data for an College Football team's current/future game, and creates a sensor with attributes for the details of the game. 
 
 The integration is a shameless fork of the excellent [NWS alerts](https://github.com/finity69x2/nws_alerts) custom component by @finity69x2.Thank you for the starting place!
 
@@ -35,19 +35,19 @@ The attributes available will change based on the sensor's state, a small number
 | `possession` | The ID of the team in possession of the ball. This will correlate to `team_id` or `opponent_id` below. Note that this value will be null in between posessions (after a score, etc). | `IN` |
 | `last_play` | Sentence describing the most recent play, usually including the participants from both offense and defense, and the resulting yards. Note this can be null on posession changes or in between quarters. | `IN` |
 | `down_distance_text` | String for the down and yards to go (eg. "2nd and 7"). | `IN` |
-| `team_abbr` | The abbreviation for your team (ie. `SEA` for the Seahawks). | `PRE` `IN` `POST` `BYE` |
+| `team_abbr` | The abbreviation for your team (ie. `TTU` for Texas Tech). | `PRE` `IN` `POST` `BYE` |
 | `team_id` | A numeric ID for your team, used to match `possession` above. | `PRE` `IN` `POST` |
-| `team_name` | Your team's name (eg. "Seahawks"). Note this does not include the city name. | `PRE` `IN` `POST` `BYE` |
+| `team_name` | Your team's name (eg. "Red Raiders"). Note this does not include the college name. | `PRE` `IN` `POST` `BYE` |
 | `team_record` | Your team's current record (eg. "2-3"). | `PRE` `IN` `POST` |
 | `team_homeaway` | Your team's home/away status. Either `home` or `away`. | `PRE` `IN` `POST` |
 | `team_logo` | A URL for a 500px wide PNG logo for the team. | `PRE` `IN` `POST` `BYE` |
-| `team_colors` | An array with two hex colors. The first is your team's primary color, and the second is their secondary color. Unless you're the Browns, in which case they are the same. | `PRE` `IN` `POST` |
+| `team_colors` | An array with two hex colors. The first is your team's primary color, and the second is their secondary color.  | `PRE` `IN` `POST` |
 | `team_score` | Your team's score. An integer. | `IN` `POST` |
 | `team_win_probability` | The real-time chance your team has to win, according to ESPN. A percentage, but presented as a float. Note that this value can become null in between posession changes. | `IN` |
 | `team_timeouts` | The number of remaining timeouts your team has. | `PRE` `IN` `POST` |
-| `opponent_abbr` | The abbreviation for your opponent (ie. `SEA` for the Seahawks). | `PRE` `IN` `POST` `BYE` |
+| `opponent_abbr` | The abbreviation for your opponent (ie. `UT` for the Longhorns). | `PRE` `IN` `POST` `BYE` |
 | `opponent_id` | A numeric ID for your opponent, used to match `possession` above. | `PRE` `IN` `POST` |
-| `opponent_name` | Your opponent's name (eg. "Seahawks"). Note this does not include the city name. | `PRE` `IN` `POST` `BYE` |
+| `opponent_name` | Your opponent's name (eg. "Longhorns"). Note this does not include the college name. | `PRE` `IN` `POST` `BYE` |
 | `opponent_record` | Your opponent's current record (eg. "2-3"). | `PRE` `IN` `POST` |
 | `opponent_homeaway` | Your opponent's home/away status. Either `home` or `away`. | `PRE` `IN` `POST` |
 | `opponent_logo` | A URL for a 500px wide PNG logo for the opponent. | `PRE` `IN` `POST` `BYE` |
@@ -74,11 +74,11 @@ Clone or download this repository and copy the "college-football" directory to y
   
 ## Configuration
 
-You'll need to know your team ID, which is a 2- or 3-letter acronym (eg. "SEA" for Seattle or "NE" for New England). You can find yours at https://espn.com/nfl in the top scores UI. 
+You'll need to know your team ID, which is a 2- to 4-letter acronym (eg. "TTU" for Texas Tech or "UT" for Texas). This must be capital letters. You can find yours at https://https://www.espn.com/college-football/ in the top scores UI. 
 
 ### Via the "Configuration->Integrations" section of the Home Assistant UI
 
-Look for the integration labeled "NFL" and enter your team's acronym in the UI prompt. You can also enter a friendly name. If you keep the default, your sensor will be `sensor.nfl`, otherwise it will be `sensor.friendly_name_you_picked`. 
+Look for the integration labeled "college_football" and enter your team's acronym in the UI prompt. You can also enter a friendly name. If you keep the default, your sensor will be `sensor.college_football`, otherwise it will be `sensor.friendly_name_you_picked`. 
 
 ### Manually in your `configuration.yaml` file
 
@@ -89,9 +89,9 @@ To create a sensor instance add the following configuration to your sensor defin
   team_id: 'TTU'
 ```
 
-After you restart Home Assistant then you should have a new sensor called `sensor.nfl` in your system.
+After you restart Home Assistant then you should have a new sensor called `sensor.college_football` in your system.
 
-You can overide the sensor default name (`sensor.nfl`) to one of your choosing by setting the `name` option:
+You can overide the sensor default name (`sensor.college_football`) to one of your choosing by setting the `name` option:
 
 ```
 - platform: college-football
@@ -99,4 +99,4 @@ You can overide the sensor default name (`sensor.nfl`) to one of your choosing b
   name: Texas Tech Red Raiders
 ```
 
-Using the configuration example above the sensor will then be called "sensor.seahawks".
+Using the configuration example above the sensor will then be called "sensor.texas_tech_red_raiders".
