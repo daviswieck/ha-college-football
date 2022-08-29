@@ -161,6 +161,6 @@ Change `sensor.college_football` to your sensor's `device_id`:
 type: entities
 show_header_toggle: false
 entities:
-  - entity: sensor.nhl_sensor
+  - entity: sensor.college_football
   - entity: sensor.template_opponent_team
   - entity: sensor.template_your_team
