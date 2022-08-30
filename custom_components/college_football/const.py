@@ -1,5 +1,5 @@
 # API
-API_ENDPOINT = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=04"
+API_ENDPOINT = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=80" #Defaults to All FBS 
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Safari/605.1.15"
 
 # Config
