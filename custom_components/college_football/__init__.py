@@ -147,7 +147,7 @@ async def async_get_state(config) -> dict:
     values = {}
     headers = {"User-Agent": USER_AGENT, "Accept": "application/ld+json"}
     data = None
-    url = API_ENDPOINT+CONF_TEAM_ID
+    url = API_ENDPOINT
     team_id = config[CONF_TEAM_ID]
     async with aiohttp.ClientSession() as session:
         async with session.get(url, headers=headers) as r:
