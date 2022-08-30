@@ -1,8 +1,10 @@
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 # College Football game data in Home Assistant
 
 This integration fetches data for an College Football team's current/future game, and creates a sensor with attributes for the details of the game. 
 
 The integration is a shameless fork of the excellent [ha-nfl](https://github.com/zacs/ha-nfl) custom component by @zacs. Thank you for doing all of the legwork! 
+This also includes some work from [hass-nhlapi](https://github.com/JayBlackedOut/hass-nhlapi) custom component by @JayBlackedOut. Thank you for the lovelace help!
 ____________________________________________________________________________________________________________________________________________________________________
 
 # MUST READ:
