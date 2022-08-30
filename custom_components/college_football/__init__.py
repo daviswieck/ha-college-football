@@ -157,7 +157,7 @@ async def async_get_state(config) -> dict:
 
     found_team = False
     if data is not None:
-        for event in data["events"]:
+        for event in data["nextEvent"]:
             #_LOGGER.debug("Looking at this event: %s" % event)
             if team_id in event["shortName"]:
                 _LOGGER.debug("Found event; parsing data.")
