@@ -1,5 +1,6 @@
 """ College Football Team Status """
 import logging
+import datetime  #test
 from datetime import timedelta
 import arrow
 
@@ -143,7 +144,7 @@ async def update_game(config) -> dict:
 
 async def async_get_state(config) -> dict:
     """Query API for status."""
-    import datetime    
+  
     today = datetime.datetime.today()
     thismonth = today.strftime("%Y%m")
     
