@@ -143,11 +143,14 @@ async def update_game(config) -> dict:
 
 async def async_get_state(config) -> dict:
     """Query API for status."""
-
+    
+    today = date.today()
+    thismonth = today.strftime("%Y%m")
+    
     values = {}
     headers = {"User-Agent": USER_AGENT, "Accept": "application/ld+json"}
     data = None
-    url = API_ENDPOINT
+    url = print(API_ENDPOINT,thismonth,sep='')
     team_id = config[CONF_TEAM_ID]
     async with aiohttp.ClientSession() as session:
         async with session.get(url, headers=headers) as r:
