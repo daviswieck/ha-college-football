@@ -1,7 +1,7 @@
 """ College Football Team Status """
 import logging
 import datetime  #test
-from datetime import timedelta import date
+from datetime import timedelta
 import arrow
 
 import aiohttp
