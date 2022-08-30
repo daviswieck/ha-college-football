@@ -5,6 +5,15 @@ Attributes exposed:
 
 ![Attributes exposed](./ATTRIBUTES.jpg) 
 
+When game is scheduled:
+
+![With a game scheduled](./PREGameLovelace.png) 
+
+
+When a game is ongoing:
+
+
+When a game is over:
 
 ## Configuration for Lovelace Card
 **The below will only work on Home Assistant Core pre 2021.8.X:**
@@ -69,12 +78,5 @@ entities:
   - entity: sensor.college_football
   - entity: sensor.template_opponent_team
   - entity: sensor.template_your_team
+```
 
-When game is scheduled:
-
-![With a game scheduled](./PREGameLovelace.png) 
-
-When a game is ongoing:
-
-
-When a game is over:
