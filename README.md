@@ -1,12 +1,50 @@
-# STILL TESTING NOT WORKING!!!
-
 # College Football game data in Home Assistant
 
 This integration fetches data for an College Football team's current/future game, and creates a sensor with attributes for the details of the game. 
 
-The integration is a shameless fork of the excellent [NWS alerts](https://github.com/finity69x2/nws_alerts) custom component by @finity69x2.Thank you for the starting place!
+The integration is a shameless fork of the excellent [ha-nfl](https://github.com/zacs/ha-nfl) custom component by @zacs. Thank you for doing all of the legwork! 
+____________________________________________________________________________________________________________________________________________________________________
 
-The integration is a shameless fork of the excellent [ha-nfl](https://github.com/zacs/ha-nfl) custom component by @zacs.Thank you for the starting place!
+# MUST READ:
+The default API in the "const.py" has a limit on amount of games it can pull. It defaults to all FBS schools, but only pulls the first 25 on the schedule. To get around this, you can update the "group" number in the API url for it to find your team. If you only care about the Top 25 teams, you can erase the "?groups=XX".
+
+After install and restarting, navigate to
+/config/custom_components/college_football/const.py
+API_ENDPOINT = "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=80"
+change "groups=XX" to one of the numbers below, ideally whichever conference your team is in. Restart HA and you should beable to find your team every week. 
+
+## Conference Group Numbers
+| Conference | Group Number |
+| --- | --- |
+| ALL FBS | 80 |
+| ACC | 1 |
+| AMERICAN | 151 |
+| BIG12 | 4 |
+| BIG10 | 5 |
+| C-USA | 12 |
+| FBS IND. | 18 |
+| MAC | 15 |
+| MOUNTAIN WEST | 17 |
+| PAC12 | 9 |
+| SEC | 8 |
+| SUNBELT | 37 |
+| FCS | 81 |
+| ASUN | 176 |
+| BIG SKY | 20 |
+| BIG SOUTH | 40 |
+| CAA | 18 |
+| IVY | 22 |
+| MEAC | 24 |
+| MVFC | 21 |
+| NEC | 25 |
+| OVC | 26 |
+| PATRIOT | 27 |
+| PIONEER | 28 |
+| SWAC | 31 |
+| SOUTHERN | 29 |
+| SOUTHLAND | 30 |
+| WAC | 16 |
+| DIVII/III | 35 |
 
 ## Sensor Data
 
@@ -30,8 +68,8 @@ The attributes available will change based on the sensor's state, a small number
 | `venue` | The name of the stadium where the game is being played (eg. "Arrowhead Stadium") | `PRE` `IN` `POST` |
 | `location` | The city and state where the game is being played (eg. "Pittsburgh, PA") | `PRE` `IN` `POST` |
 | `tv_network` | The TV network where you can watch the game (eg. "NBC" or "NFL"). Note that if there is a national feed, it will be listed here, otherwise the local affiliate will be listed. | `PRE` `IN` `POST` |
-| `odds` | The betting odds for the game (eg. "PIT -5.0") | `PRE` |
-| `overunder` | The over/under betting line for the total points scored in the game (eg. "42.5"). | `PRE` |
+*Removed due to error if game has no odds*| `odds` | The betting odds for the game (eg. "PIT -5.0") | `PRE` |
+*Removed due to error if game has no odds*| `overunder` | The over/under betting line for the total points scored in the game (eg. "42.5"). | `PRE` |
 | `possession` | The ID of the team in possession of the ball. This will correlate to `team_id` or `opponent_id` below. Note that this value will be null in between posessions (after a score, etc). | `IN` |
 | `last_play` | Sentence describing the most recent play, usually including the participants from both offense and defense, and the resulting yards. Note this can be null on posession changes or in between quarters. | `IN` |
 | `down_distance_text` | String for the down and yards to go (eg. "2nd and 7"). | `IN` |
@@ -74,7 +112,7 @@ Clone or download this repository and copy the "college-football" directory to y
   
 ## Configuration
 
-You'll need to know your team ID, which is a 2- to 4-letter acronym (eg. "TTU" for Texas Tech or "UT" for Texas). This must be capital letters. You can find yours at https://https://www.espn.com/college-football/ in the top scores UI. 
+You'll need to know your team ID, which is a 2- to 4-letter acronym (eg. "TTU" for Texas Tech or "UT" for Texas). This MUST BE capital letters. You can find yours at https://https://www.espn.com/college-football/ in the top scores UI. 
 
 ### Via the "Configuration->Integrations" section of the Home Assistant UI
 
@@ -125,7 +163,7 @@ sensor:
   
 `ui-lovelace.yaml`
 
-Change `sensor.nhl_sensor` to your sensor's `device_id`:
+Change `sensor.college_football` to your sensor's `device_id`:
 ```
 type: entities
 show_header_toggle: false
@@ -139,7 +177,7 @@ entities:
 
 `configuration.yaml`
 
-Change `sensor.nhl_sensor` to your sensor's `device_id`:
+Change `sensor.college_football` to your sensor's `device_id`:
 ```
 template:
   - sensor:
