@@ -234,7 +234,8 @@ async def async_get_state(config) -> dict:
                         values["team_colors"] = ['#013369','#013369']
                     if team_id == 'AFC':
                         values["team_colors"] = ['#D50A0A','#D50A0A']
-                values["team_score"] = event["competitions"][0]["competitors"][team_index]["score"]                
+                values["team_score"] = event["competitions"][0]["competitors"][team_index]["score"]    
+                values["team_rank"] = event["competitions"][0]["competitors"][team_index]["curatedRank"]["current"] 
                 values["opponent_abbr"] = event["competitions"][0]["competitors"][oppo_index]["team"]["abbreviation"]
                 values["opponent_id"] = event["competitions"][0]["competitors"][oppo_index]["team"]["id"]
                 values["opponent_name"] = event["competitions"][0]["competitors"][oppo_index]["team"]["shortDisplayName"]
@@ -253,6 +254,7 @@ async def async_get_state(config) -> dict:
                     if team_id == 'NFC':
                         values["opponent_colors"] = ['#D50A0A','#D50A0A']
                 values["opponent_score"] = event["competitions"][0]["competitors"][oppo_index]["score"]
+                values["opponent_rank"] = event["competitions"][0]["competitors"][oppo_index]["curatedRank"]["current"] 
                 values["last_update"] = arrow.now().format(arrow.FORMAT_W3C)
                 values["private_fast_refresh"] = False
         
@@ -321,6 +323,7 @@ async def async_clear_states(config) -> dict:
         "team_homeaway": None,
         "team_colors": None,
         "team_score": None,
+        "team_rank": None, 
         "team_win_probability": None,
         "team_timeouts": None,
         "opponent_abbr": None,
@@ -331,6 +334,7 @@ async def async_clear_states(config) -> dict:
         "opponent_logo": None,
         "opponent_colors": None,
         "opponent_score": None,
+        "opponent_rank": None,
         "opponent_win_probability": None,
         "opponent_timeouts": None,
         "last_update": None,
