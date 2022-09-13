@@ -1,7 +1,7 @@
 {
     "domain": "college_football",
     "name": "College Football",
-    "version": "0.1",
+    "version": "0.2",
     "documentation": "https://github.com/daviswieck/ha-college-football",
     "issue_tracker": "https://github.com/daviswieck/ha-college-football/issues",
     "dependencies": [],
