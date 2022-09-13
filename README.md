@@ -70,8 +70,8 @@ The attributes available will change based on the sensor's state, a small number
 | `venue` | The name of the stadium where the game is being played (eg. "Arrowhead Stadium") | `PRE` `IN` `POST` |
 | `location` | The city and state where the game is being played (eg. "Pittsburgh, PA") | `PRE` `IN` `POST` |
 | `tv_network` | The TV network where you can watch the game (eg. "NBC" or "NFL"). Note that if there is a national feed, it will be listed here, otherwise the local affiliate will be listed. | `PRE` `IN` `POST` |
-*Removed due to error if game has no odds*| `odds` | The betting odds for the game (eg. "PIT -5.0") | `PRE` |
-*Removed due to error if game has no odds*| `overunder` | The over/under betting line for the total points scored in the game (eg. "42.5"). | `PRE` |
+| `odds` | The betting odds for the game (eg. "PITT -5.0") | `PRE` |
+| `overunder` | The over/under betting line for the total points scored in the game (eg. "42.5"). | `PRE` |
 | `possession` | The ID of the team in possession of the ball. This will correlate to `team_id` or `opponent_id` below. Note that this value will be null in between posessions (after a score, etc). | `IN` |
 | `last_play` | Sentence describing the most recent play, usually including the participants from both offense and defense, and the resulting yards. Note this can be null on posession changes or in between quarters. | `IN` |
 | `down_distance_text` | String for the down and yards to go (eg. "2nd and 7"). | `IN` |
