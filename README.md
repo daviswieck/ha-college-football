@@ -83,6 +83,7 @@ The attributes available will change based on the sensor's state, a small number
 | `team_logo` | A URL for a 500px wide PNG logo for the team. | `PRE` `IN` `POST` `BYE` |
 | `team_colors` | An array with two hex colors. The first is your team's primary color, and the second is their secondary color.  | `PRE` `IN` `POST` |
 | `team_score` | Your team's score. An integer. | `IN` `POST` |
+| `team_rank` | Your team's rank. An integer. Note: If rank is 99, then team is UNRANKED | `IN` `POST` |
 | `team_win_probability` | The real-time chance your team has to win, according to ESPN. A percentage, but presented as a float. Note that this value can become null in between posession changes. | `IN` |
 | `team_timeouts` | The number of remaining timeouts your team has. | `PRE` `IN` `POST` |
 | `opponent_abbr` | The abbreviation for your opponent (ie. `UT` for the Longhorns). | `PRE` `IN` `POST` `BYE` |
@@ -93,6 +94,7 @@ The attributes available will change based on the sensor's state, a small number
 | `opponent_logo` | A URL for a 500px wide PNG logo for the opponent. | `PRE` `IN` `POST` `BYE` |
 | `opponent_colors` | An array with two hex colors. The first is your opponent's primary color, and the second is their secondary color. | `PRE` `IN` `POST` |
 | `opponent_score` | Your opponent's score. An integer. | `IN` `POST` |
+| `opponent_rank` | Your opponent's rank. An integer. Note: If rank is 99, then team is UNRANKED | `IN` `POST` |
 | `opponent_win_probability` | The real-time chance your opponent has to win, according to ESPN. A percentage, but presented as a float. Note that this value can become null in between posession changes. | `IN` |
 | `opponent_timeouts` | The number of remaining timeouts your opponent has. | `PRE` `IN` `POST` |
 | `last_update` | A timestamp for the last time data was fetched for the game. If you watch this in real-time, you should notice it updating every 10 minutes, except for during the game (and for the ~20 minutes pre-game) when it updates every 5 seconds. | `PRE` `IN` `POST` `BYE` |
