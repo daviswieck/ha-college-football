@@ -177,6 +177,9 @@ async def async_get_state(config) -> dict:
                     except:
                         values["odds"] = None
                         values["overunder"] = None
+                else:
+                    values["odds"] = None
+                    values["overunder"] = None 
                 if event["status"]["type"]["state"].lower() in ['pre', 'post']: # could use status.completed == true as well
                     values["possession"] = None
                     values["last_play"] = None
