@@ -168,8 +168,20 @@ async def async_get_state(config) -> dict:
                 values["date"] = event["date"]
                 values["kickoff_in"] = arrow.get(event["date"]).humanize()
                 values["venue"] = event["competitions"][0]["venue"]["fullName"]
-                values["location"] = "%s, %s" % (event["competitions"][0]["venue"]["address"]["city"], event["competitions"][0]["venue"]["address"]["state"])
-                values["tv_network"] = event["competitions"][0]["broadcasts"][0]["names"][0]
+                try:
+                    values["location"] = "%s, %s" % (
+                        event["competitions"][0]["venue"]["address"]["city"],
+                        event["competitions"][0]["venue"]["address"]["state"] if (
+                        "state" in event["competitions"][0]["venue"]["address"] ) else ""
+                    )
+                except:
+                    values["location"] = event["competitions"][0]["venue"]["address"]["city"]
+                try:
+                    values["tv_network"] = event["competitions"][0]["broadcasts"][0][
+                        "names"
+                    ][0]
+                except:
+                    values["tv_network"] = None
                 if event["status"]["type"]["state"].lower() in ['pre']: # odds only exist pre-game
                     try:
                         values["odds"] = event["competitions"][0]["odds"][0]["details"]
@@ -184,8 +196,8 @@ async def async_get_state(config) -> dict:
                     values["possession"] = None
                     values["last_play"] = None
                     values["down_distance_text"] = None
-                    values["team_timeouts"] = 3
-                    values["opponent_timeouts"] = 3
+                    values["team_timeouts"] = None
+                    values["opponent_timeouts"] = None
                     values["quarter"] = None
                     values["clock"] = None
                     values["team_win_probability"] = None
