@@ -127,7 +127,7 @@ Look for the integration labeled "college_football" and enter your team's acrony
 To create a sensor instance add the following configuration to your sensor definitions using the team_id found above:
 
 ```
-- platform: college-football
+- platform: college_football
   team_id: 'TTU'
 ```
 
@@ -136,7 +136,7 @@ After you restart Home Assistant then you should have a new sensor called `senso
 You can overide the sensor default name (`sensor.college_football`) to one of your choosing by setting the `name` option:
 
 ```
-- platform: college-football
+- platform: college_football
   team_id: 'TTU'
   name: Texas Tech Red Raiders
 ```
