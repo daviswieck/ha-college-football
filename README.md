@@ -51,12 +51,12 @@ change "groups=XX" to one of the numbers below, ideally whichever conference you
 ## Sensor Data
 
 ### State
-The sensor is pretty simple: the main state is `PRE`, `IN`, `POST`, `BYE` or `NOT_FOUND`, but there are attributes for pretty much all aspects of the game, when available. State definitions are as you'd expect:
+The sensor is pretty simple: the main state is `PRE`, `IN`, `POST`, or `NOT_FOUND`, but there are attributes for pretty much all aspects of the game, when available. State definitions are as you'd expect:
 - `PRE`: The game is in pre-game state. This happens on the first day of the game week, which seems to be Tuesday evenings around midnight Eastern time (once all the games through the Monday Night Football game are wrapped up). 
 - `IN`: The game is in progress.
 - `POST`: The game has completed. 
-- `BYE`: Your given team has a bye week this week. Note that attributes available are limited in this case (only abreviation, name, logo, and last updated time will be available). 
-- `NOT_FOUND`: There is no game found for your team, nor is there a bye. This should only happen at the end of the season, and once your team is eliminated from postseason play. 
+- `BYE`: Your given team has a bye week this week. Note that attributes available are limited in this case (only abreviation, name, logo, and last updated time will be available). ONLY WORKS WITH NFL INTEGRATION, COLLEGE FOOTBALL API DOES NOT SHOW TEAMS ON BYE. 
+- `NOT_FOUND`: There is no game found for your team, nor is there a bye. This should only happen at the end of the season, and once your team is eliminated from postseason play. WILL SHOW IF TEAM IS ON BYE. COLLEGE FOOTBALL API DOES NOT HAVE THE teamsonBye query in API. 
 
 ### Attributes
 The attributes available will change based on the sensor's state, a small number are always available (team abbreviation, team name, and logo), but otherwise the attributes only populate when in the current state. The table below lists which attributes are available in which states. 
