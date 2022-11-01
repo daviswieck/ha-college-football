@@ -9,7 +9,7 @@ CONF_TEAM_ID = "team_id"
 # Defaults
 DEFAULT_ICON = "mdi:football"
 DEFAULT_NAME = "College_Football"
-DEFAULT_TIMEOUT = 120
+DEFAULT_TIMEOUT = 240
 
 # Misc
 TEAM_ID = ""
