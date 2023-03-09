@@ -340,7 +340,10 @@ async def async_get_state(config) -> dict:
                 values["team_score"] = event["competitions"][0]["competitors"][
                     team_index
                 ]["score"]
-                values["team_rank"] = event["competitions"][0]["competitors"][team_index]["curatedRank"]["current"] 
+                try:
+                    values["team_rank"] = event["competitions"][0]["competitors"][team_index]["curatedRank"]["current"] 
+                except:
+                    values["team_rank"] = None
                 values["opponent_abbr"] = event["competitions"][0]["competitors"][
                     oppo_index
                 ]["team"]["abbreviation"]
@@ -389,7 +392,10 @@ async def async_get_state(config) -> dict:
                 values["opponent_score"] = event["competitions"][0]["competitors"][
                     oppo_index
                 ]["score"]
-                values["opponent_rank"] = event["competitions"][0]["competitors"][oppo_index]["curatedRank"]["current"] 
+                try:
+                    values["opponent_rank"] = event["competitions"][0]["competitors"][oppo_index]["curatedRank"]["current"] 
+                except:
+                    values["opponent_rank"] = None
                 values["last_update"] = arrow.now().format(arrow.FORMAT_W3C)
                 values["private_fast_refresh"] = False
         
