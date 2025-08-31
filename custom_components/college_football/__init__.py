@@ -236,9 +236,12 @@ async def async_get_state(config) -> dict:
                 else:
                     values["quarter"] = event["status"]["period"]
                     values["clock"] = event["status"]["displayClock"]
-                    values["last_play"] = event["competitions"][0]["situation"][
+                    try: 
+                        values["last_play"] = event["competitions"][0]["situation"][
                         "lastPlay"
                     ]["text"]
+                    except: 
+                        values["last_play"] = None
                     try:
                         values["down_distance_text"] = event["competitions"][0][
                             "situation"
@@ -255,12 +258,15 @@ async def async_get_state(config) -> dict:
                         event["competitions"][0]["competitors"][team_index]["homeAway"]
                         == "home"
                     ):
-                        values["team_timeouts"] = event["competitions"][0]["situation"][
+                        try: values["team_timeouts"] = event["competitions"][0]["situation"][
                             "homeTimeouts"
                         ]
-                        values["opponent_timeouts"] = event["competitions"][0][
+                        except: values["team_timeouts"] = None
+                        
+                        try: values["opponent_timeouts"] = event["competitions"][0][
                             "situation"
                         ]["awayTimeouts"]
+                        except: values["opponent_timeouts"] = None
                         try:
                             values["team_win_probability"] = event["competitions"][0][
                                 "situation"
